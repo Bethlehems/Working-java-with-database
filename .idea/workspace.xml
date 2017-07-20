@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c7dd19d-8b9c-4e70-8f1d-3049866528f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Clearance.java" afterPath="$PROJECT_DIR$/src/Clearance.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,12 +18,16 @@
       <file leaf-file-name="Clearance.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Clearance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-600">
-              <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+            <state relative-caret-position="240">
+              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <marker date="1500494834000" expanded="true" signature="539:560" ph=" SELECT statement (STUDENT)" />
+                <marker date="1500538261000" expanded="true" signature="664:685" ph=" SELECT statement (STUDENT)" />
+                <marker date="1500538261000" expanded="true" signature="1761:1782" ph=" SELECT statement (STUDENT)" />
+                <marker date="1500538261000" expanded="true" signature="2622:2643" ph=" SELECT statement (STUDENT)" />
+                <marker date="1500538261000" expanded="true" signature="4147:4210" ph=" INSERT statement (STUDENT)" />
+                <marker date="1500538261000" expanded="true" signature="4693:4714" ph=" SELECT statement (STUDENT)" />
               </folding>
             </state>
           </provider>
@@ -446,7 +449,11 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1500494834000" expanded="true" signature="539:560" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="664:685" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="1761:1782" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="2622:2643" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4147:4210" ph=" INSERT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4693:4714" ph=" SELECT statement (STUDENT)" />
           </folding>
         </state>
       </provider>
@@ -458,7 +465,11 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1500494834000" expanded="true" signature="539:560" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="664:685" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="1761:1782" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="2622:2643" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4147:4210" ph=" INSERT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4693:4714" ph=" SELECT statement (STUDENT)" />
           </folding>
         </state>
       </provider>
@@ -470,7 +481,11 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1500494834000" expanded="true" signature="539:560" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="664:685" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="1761:1782" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="2622:2643" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4147:4210" ph=" INSERT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4693:4714" ph=" SELECT statement (STUDENT)" />
           </folding>
         </state>
       </provider>
@@ -495,12 +510,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Clearance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+        <state relative-caret-position="240">
+          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1500494834000" expanded="true" signature="539:560" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="664:685" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="1761:1782" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="2622:2643" ph=" SELECT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4147:4210" ph=" INSERT statement (STUDENT)" />
+            <marker date="1500538261000" expanded="true" signature="4693:4714" ph=" SELECT statement (STUDENT)" />
           </folding>
         </state>
       </provider>
