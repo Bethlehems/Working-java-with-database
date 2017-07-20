@@ -2,24 +2,31 @@
  * Created by betty on 7/19/17.
  */
 
-import com.sun.rowset.internal.InsertRow;
-
 import java.sql.*;
 import java.util.Scanner;
 
-public class Clearance {
-    public static Statement connection(){
-        try {Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Clearance_System", "root", "made2begr8");
+class student {
+    String name;
+    String ID;
+    String D_ID;
+
+}
+
+
+class actions {
+    public static Statement connection() {
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Clearance_System", "root", "made2begr8");
             Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             return stmt;
-        }
-        catch (SQLException err) {
+        } catch (SQLException err) {
             System.out.println(err.getMessage());
         }
-    return null;
+        return null;
     }
-    public static void update() {
+
+    public static void update(student std) {
         try {
             String SQL = "SELECT * FROM Student";
             ResultSet rs = connection().executeQuery(SQL);
@@ -29,20 +36,19 @@ public class Clearance {
             //lets say we want to update the student name
             System.out.println("Enter new name:");
             String newName = scn.next();
-            boolean found=false;
+            boolean found = false;
             rs.first();
             rs.previous();
             while (rs.next()) {
-                if (rs.getString("Stud_ID").compareTo(search) == 0)
-                {
-                   rs.updateString("Stud_Name", newName);
+                if (rs.getString("Stud_ID").compareTo(search) == 0) {
+                    rs.updateString("Stud_Name", newName);
                     System.out.println("Name Updated Successfully.");
-                    found=true;
+                    found = true;
                     break;
 
                 }
             }
-            if(found==false){
+            if (found == false) {
                 System.out.println("Student not found.");
             }
         } catch (SQLException err) {
@@ -55,23 +61,23 @@ public class Clearance {
 
     }
 
-    public static void show() {
+    public static void show(student std) {
         try {
             String SQL = "SELECT * FROM Student";
             ResultSet rs = connection().executeQuery(SQL);
             System.out.println("Name    ID    DepName");
             rs.first();
             rs.previous();
-            boolean found=false;
+            boolean found = false;
             while (rs.next()) {
 
-                String stud_name = rs.getString("Stud_Name");
-                String stud_id = rs.getString("Stud_ID");
-                String dep_id = rs.getString("Dep_ID");
-                System.out.println(stud_name + "    " + stud_id + "    " + dep_id);
-                found=true;
+                std.name = rs.getString("Stud_Name");
+                std.ID= rs.getString("Stud_ID");
+                std.D_ID= rs.getString("Dep_ID");
+                System.out.println(std.name + "    " + std.ID + "    " + std.D_ID);
+                found = true;
             }
-            if(found==false){
+            if (found == false) {
                 System.out.println("Student not found.");
             }
 
@@ -86,7 +92,7 @@ public class Clearance {
     }
 
 
-    public static void search() {
+    public static void search(student std) {
         try {
             String SQL = "SELECT * FROM Student";
             ResultSet rs = connection().executeQuery(SQL);
@@ -94,18 +100,18 @@ public class Clearance {
             System.out.println("Enter the id you want to search");
             String search = scn.next();
             rs.first();
-           rs.previous();
-           boolean found=false;
+            rs.previous();
+            boolean found = false;
             while (rs.next()) {
                 if (rs.getString("Stud_ID").compareTo(search) == 0) {
                     String stud_name = rs.getString("Stud_Name");
                     String dep_id = rs.getString("Dep_ID");
                     System.out.println("Name    ID    DepName");
                     System.out.println(rs.getString("Stud_ID") + "    " + stud_name + "    " + dep_id);
-                    found=true;
+                    found = true;
                 }
             }
-            if(found==false){
+            if (found == false) {
                 System.out.println("Student not found.");
             }
         } catch (SQLException err) {
@@ -117,26 +123,26 @@ public class Clearance {
 
     }
 
-    public static void addRow() {
+    public static void addRow(student std) {
         try {
-            Scanner s=new Scanner(System.in);
+            Scanner s = new Scanner(System.in);
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/Clearance_System", "root", "made2begr8");
             System.out.println("Enter new student's Info.");
             System.out.println("ID:");
-            String insertID=s.next();
+            std.ID = s.next();
             System.out.println("Name:");
-            String insertName=s.next();
+            std.name= s.next();
             System.out.println("Department ID:");
-            String insertDid=s.next();
-            String query ="insert into Student (Stud_ID,Stud_Name,Dep_ID)"+"values (?,?,?)";
-            PreparedStatement ps=con.prepareStatement(query);
-            ps.setString(1,insertID);
-            ps.setString(2,insertName);
-            ps.setString(3,insertDid);
+            std.D_ID = s.next();
+            String query = "insert into Student (Stud_ID,Stud_Name,Dep_ID)" + "values (?,?,?)";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, std.ID);
+            ps.setString(2, std.name);
+            ps.setString(3, std.D_ID);
             ps.execute();
             con.close();
             System.out.println("Insering records......Student Added Successfuly.");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         menu();
@@ -144,7 +150,7 @@ public class Clearance {
 
     }
 
-    public static void deleteRow() {
+    public static void deleteRow(student std) {
         try {
             String SQL = "SELECT * FROM Student";
             ResultSet rs = connection().executeQuery(SQL);
@@ -152,83 +158,81 @@ public class Clearance {
             Scanner scn = new Scanner(System.in);
             String delete = scn.next();
             rs.first();
-           rs.previous();
-            boolean found=false;
+            rs.previous();
+            boolean found = false;
             while (rs.next()) {
                 if (rs.getString("Stud_ID").compareTo(delete) == 0) {
                     rs.deleteRow();
                     System.out.println("Row Deleted Successfully.");
-                     found=true;
+                    found = true;
                 }
             }
-            if(found==false){
+            if (found == false) {
                 System.out.println("Student not found.");
             }
         } catch (SQLException err) {
             System.out.println(err.getMessage());
 
+        }
+        menu();
     }
-    menu();
-    }
-public static void menu(){
-    Scanner input = new Scanner(System.in);
-    System.out.println("\n\n1,Display all student Information.");
-    System.out.println("2,Search Specific Student.");
-    System.out.println("3,Update Student Info");
-    System.out.println("4,delete Student Info");
-    System.out.println("5,Add Student.");
-    boolean over = false;//Flag to check if valid choice is made...
 
-    while (!over) {
-        System.out.println("Choose an action:");
-        String inp=input.next();
-        while (inp.length() != 1) {
-            System.out.print("INVALID INPUT. CHOOSE AGAIN.\n");
+    public static void menu() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("\n\n1,Display all student Information.");
+        System.out.println("2,Search Specific Student.");
+        System.out.println("3,Update Student Info");
+        System.out.println("4,delete Student Info");
+        System.out.println("5,Add Student.");
+        boolean over = false;//Flag to check if valid choice is made...
+        student std=new student();
+        while (!over) {
+            System.out.println("Choose an action:");
+            String inp = input.next();
+            while (inp.length() != 1) {
+                System.out.print("INVALID INPUT. CHOOSE AGAIN.\n");
+
+            }
+            switch (inp.charAt(0)) {
+                case '1': {
+                    show(std);
+                    over = true;
+                    break;
+                }
+                case '2': {
+                    search(std);
+                    over = true;
+                    break;
+                }
+                case '3': {
+                    update(std);
+                    over = true;
+                    break;
+                }
+                case '4': {
+                    deleteRow(std);
+                    over = true;
+                    break;
+                }
+                case '5': {
+                    addRow(std);
+                    over = true;
+                    break;
+                }
+                default: {
+                    System.out.println("Invalid input. Enter again");
+                    break;
+                }
+
+            }
 
         }
-        switch (inp.charAt(0)) {
-            case '1':
-            {
-                show();
-                over=true;
-                break;
-            }
-            case '2':
-            {
-                search();
-                over=true;
-                break;
-            }
-            case '3':
-            {
-                update();
-                over=true;
-                break;
-            }
-            case '4':{
-                deleteRow();
-                over=true;
-                break;
-            }
-            case '5':{
-                addRow();
-                over=true;
-                break;
-            }
-            default:
-            {
-                System.out.println("Invalid input. Enter again");
-                break;
-            }
 
-        }
 
     }
-
-
 }
 
-
+public class Clearance {
     public static void main(String[] args) {
 
         try {
@@ -237,7 +241,9 @@ public static void menu(){
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        menu();
+
+        actions act=new actions();
+        act.menu();
 
     }
 }
