@@ -14,12 +14,8 @@ public class Clearance {
 
             return stmt;
         }
-
-
         catch (SQLException err) {
             System.out.println(err.getMessage());
-
-
         }
     return null;
     }
@@ -33,8 +29,8 @@ public class Clearance {
             //lets say we want to update the student name
             System.out.println("Enter new name:");
             String newName = scn.next();
-boolean found=false;
-           rs.first();
+            boolean found=false;
+            rs.first();
             rs.previous();
             while (rs.next()) {
                 if (rs.getString("Stud_ID").compareTo(search) == 0)
@@ -99,14 +95,14 @@ boolean found=false;
             String search = scn.next();
             rs.first();
            rs.previous();
-boolean found=false;
+           boolean found=false;
             while (rs.next()) {
                 if (rs.getString("Stud_ID").compareTo(search) == 0) {
                     String stud_name = rs.getString("Stud_Name");
                     String dep_id = rs.getString("Dep_ID");
                     System.out.println("Name    ID    DepName");
                     System.out.println(rs.getString("Stud_ID") + "    " + stud_name + "    " + dep_id);
-found=true;
+                    found=true;
                 }
             }
             if(found==false){
@@ -132,13 +128,13 @@ found=true;
             String insertName=s.next();
             System.out.println("Department ID:");
             String insertDid=s.next();
-        String query ="insert into Student (Stud_ID,Stud_Name,Dep_ID)"+"values (?,?,?)";
-        PreparedStatement ps=con.prepareStatement(query);
-        ps.setString(1,insertID);
-        ps.setString(2,insertName);
-        ps.setString(3,insertDid);
-        ps.execute();
-        con.close();
+            String query ="insert into Student (Stud_ID,Stud_Name,Dep_ID)"+"values (?,?,?)";
+            PreparedStatement ps=con.prepareStatement(query);
+            ps.setString(1,insertID);
+            ps.setString(2,insertName);
+            ps.setString(3,insertDid);
+            ps.execute();
+            con.close();
             System.out.println("Insering records......Student Added Successfuly.");
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -241,8 +237,7 @@ public static void menu(){
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-menu();
+        menu();
 
     }
 }
